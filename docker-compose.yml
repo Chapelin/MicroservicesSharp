@@ -6,3 +6,9 @@ services:
     build:
       context: ./MicroService1
       dockerfile: Dockerfile
+
+  microservice2:
+    image: microservice2
+    build:
+      context: ./MicroService2
+      dockerfile: Dockerfile
