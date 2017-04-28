@@ -12,3 +12,9 @@ services:
     build:
       context: ./MicroService2
       dockerfile: Dockerfile
+
+  webappmicroservice:
+    image: webappmicroservice
+    build:
+      context: ./WebAppMicroService
+      dockerfile: Dockerfile
