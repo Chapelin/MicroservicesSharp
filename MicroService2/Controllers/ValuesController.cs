@@ -11,16 +11,16 @@ namespace MicroService2.Controllers
     {
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<int> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new int[] { 1, 2,3 };
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public int Get(int id)
         {
-            return "value";
+            return id;
         }
 
         // POST api/values

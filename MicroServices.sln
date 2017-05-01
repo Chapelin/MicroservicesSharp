@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroService2", "MicroServi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppMicroService", "WebAppMicroService\WebAppMicroService.csproj", "{119CA8E9-0CEF-4114-A97B-D7A490EE602B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microphone.Core", "Microphone\Microphone.Core\Microphone.Core.csproj", "{98A9974E-0CA3-42BB-A0B5-FB8859C92DD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{119CA8E9-0CEF-4114-A97B-D7A490EE602B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{119CA8E9-0CEF-4114-A97B-D7A490EE602B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{119CA8E9-0CEF-4114-A97B-D7A490EE602B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98A9974E-0CA3-42BB-A0B5-FB8859C92DD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98A9974E-0CA3-42BB-A0B5-FB8859C92DD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98A9974E-0CA3-42BB-A0B5-FB8859C92DD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98A9974E-0CA3-42BB-A0B5-FB8859C92DD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
