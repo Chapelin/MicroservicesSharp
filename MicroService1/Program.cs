@@ -27,6 +27,7 @@ namespace MicroService1
 
             var options = new ConsulOptions();
             options.Host = ConsulIP;
+            options.HealthCheckPath = "/api/values";
             var loggerFactory = new LoggerFactory();
             var logger = loggerFactory.CreateLogger("logger");
             var provider = new ConsulProvider(loggerFactory, Options.Create(options));
