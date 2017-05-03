@@ -1,20 +1,49 @@
 version: '2'
 
 services:
-  microservice1:
-    image: microservice1
-    build:
+ consul:
+  image: consul
+  ports:
+   - "8500:8500"
+   - "8300:8300"
+   - "8600:8600"
+   - "8400:8400"
+   - "8302:8302"
+   - "8301:8301"
+  networks:
+   main:
+    aliases:
+     - consul
+
+ microservice1:
+  image: microservice1
+  build:
       context: ./MicroService1
       dockerfile: Dockerfile
+  networks:
+   main:
+    aliases:
+     - microservice1
 
-  microservice2:
-    image: microservice2
-    build:
-      context: ./MicroService2
-      dockerfile: Dockerfile
+ microservice2:
+  image: microservice2
+  build:
+   context: ./MicroService2
+   dockerfile: Dockerfile
+  networks:
+   main:
+    aliases:
+     - microservice2
 
-  webappmicroservice:
-    image: webappmicroservice
-    build:
-      context: ./WebAppMicroService
-      dockerfile: Dockerfile
+ webappmicroservice:
+  image: webappmicroservice
+  build:
+   context: ./WebAppMicroService
+   dockerfile: Dockerfile
+  networks:
+   main:
+    aliases:
+     - webapp
+
+networks:
+  main:
