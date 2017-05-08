@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microphone.Consul;
@@ -15,7 +12,6 @@ namespace MicroService1
     public class Program
     {
         private static string ConsulIP = "consul";
-        private static string ThisServiceAlias = "microservice1";
         public static void Main(string[] args)
         {
             var host = new WebHostBuilder()
@@ -31,8 +27,9 @@ namespace MicroService1
             var loggerFactory = new LoggerFactory();
             var logger = loggerFactory.CreateLogger("logger");
             var provider = new ConsulProvider(loggerFactory, Options.Create(options));
-            Cluster.RegisterService(new Uri(string.Format("http://{0}",ThisServiceAlias)), provider, "environment", "v1", logger);
-
+            Cluster.RegisterService(new Uri(string.Format("http://{0}",Environment.MachineName)), provider, "environment", "v1", logger);
+            Console.WriteLine("Registré environment pour la machine {0}", Environment.MachineName);
+            logger.LogError("Registré environment pour la machine {0}", Environment.MachineName);
             host.Run();
            
         }

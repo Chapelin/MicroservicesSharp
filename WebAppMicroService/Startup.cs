@@ -7,11 +7,14 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microphone.Consul;
+using Microphone.AspNet;
 
 namespace WebAppMicroService
 {
     public class Startup
     {
+        private static string ConsulIP = "consul";
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -29,6 +32,8 @@ namespace WebAppMicroService
         {
             // Add framework services.
             services.AddMvc();
+            services.AddMicrophone<ConsulProvider>();
+            services.Configure<ConsulOptions>(o => o.Host = ConsulIP);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

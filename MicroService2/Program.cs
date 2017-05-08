@@ -31,7 +31,7 @@ namespace MicroService2
             var loggerFactory = new LoggerFactory();
             var logger = loggerFactory.CreateLogger("logger");
             var provider = new ConsulProvider(loggerFactory, Options.Create(options));
-            Cluster.RegisterService(new Uri(string.Format("http://{0}", ThisServiceAlias)), provider, "integers", "v1", logger);
+            Cluster.RegisterService(new Uri(string.Format("http://{0}", Environment.MachineName)), provider, "integers", "v1", logger);
 
             host.Run();
         }

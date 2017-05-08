@@ -13,7 +13,7 @@ namespace MicroService1.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { Environment.MachineName };
+            return new string[] { "Depuis un microservice : "+Environment.MachineName };
         }
 
         // GET api/values/5

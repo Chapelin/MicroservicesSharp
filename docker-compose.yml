@@ -15,6 +15,25 @@ services:
     aliases:
      - consul
 
+ microservice1_1:
+  image: microservice1
+  build:
+      context: ./MicroService1
+      dockerfile: Dockerfile
+  networks:
+   main:
+    aliases:
+     - microservice1_1
+# microservice1_2:
+#  image: microservice1
+#  build:
+#      context: ./MicroService1
+#      dockerfile: Dockerfile
+#  networks:
+#   main:
+#    aliases:
+#     - microservice1_2
+
  microservice1:
   image: microservice1
   build:
@@ -37,6 +56,8 @@ services:
 
  webappmicroservice:
   image: webappmicroservice
+  ports:
+   - "80:80"
   build:
    context: ./WebAppMicroService
    dockerfile: Dockerfile

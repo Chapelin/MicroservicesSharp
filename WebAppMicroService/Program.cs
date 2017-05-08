@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microphone;
 
 namespace WebAppMicroService
 {
@@ -17,6 +18,7 @@ namespace WebAppMicroService
                 .UseStartup<Startup>()
                 .UseApplicationInsights()
                 .Build();
+
 
             host.Run();
         }
